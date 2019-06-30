@@ -26,7 +26,7 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train_images,train_labels,epochs=10)
+model.fit(train_images,train_labels,epochs=5)
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
@@ -68,7 +68,7 @@ def plot_value_array(i, predictions_array, true_label):
     thisplot[true_label].set_color('blue')
 
 
-for i in range(25):
+for i in range(10):
     plt.figure(figsize=(6,3))
     plt.subplot(1,2,1)
     plot_image(i, predictions, test_labels, test_images)
