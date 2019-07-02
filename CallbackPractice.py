@@ -4,11 +4,12 @@ from tensorflow import keras
 #its a good idea to check your accuracy on the epoch end instead of at
 # the beginning as it can vary a lot during executing.
 
+
 class myCallback(tf.keras.callbacks.Callback):
-  def on_epoch_end(self, epoch, logs={}):
-    if(logs.get('acc')>0.6):
-      print("\nReached 60% accuracy so cancelling training!")
-      self.model.stop_training = True
+    def on_epoch_end(self, epoch, logs={}):
+      if logs.get('acc')>0.6:
+        print("\nReached 60% accuracy so cancelling training!")
+        self.model.stop_training = True
 
 
 callback = myCallback()
